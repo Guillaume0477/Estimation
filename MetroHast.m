@@ -1,2 +1,2 @@
-function x = MetroHast(T, a, b, sigq)  x = zeros([T,1]);  x(1) = 0.5;    for k = 1:T-1        xcand = Loi_de_proposition(x(k), sigq);        alpha = min(1,cibleBeta(xcand, a, b)/cibleBeta(x(k), a, b));        choice = rand();        if choice < alpha      x(k+1) = xcand;    else       x(k+1) = x(k);    end      end    histo = hist(x,10);    figure();  bar(histo);  
-endfunction
+function x = MetroHast(T, a, b, sigq)  x = zeros([T,1]);  x(1) = 0.5;    nbBins = 20;    for k = 1:T-1        xcand = Loi_de_proposition(x(k), sigq);        alpha = min(1,cibleBeta(xcand, a, b)/cibleBeta(x(k), a, b));        choice = rand();        if choice < alpha      x(k+1) = xcand;    else       x(k+1) = x(k);    end      end  histo = hist(x,nbBins+1);  histo = histo/sum(histo);      crossCorr = xcorr(x,x);    figure();  plot(x)    figure()  plot(-T+1:T-1, crossCorr)    figure();  bar(0:1/nbBins:1, histo);  
+end
