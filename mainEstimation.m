@@ -1,1 +1,1 @@
-close all;clear variables;pkg load signal;T = 10000;a = 0.5;b = 0.5;sigq = 0.5;x = MetroHast(T,a,b, sigq);
+close all;clear variables;pkg load signal;T = 10000;a = 0.5;b = 0.5;sigq = 0.5;loiProp = 0;x = MetroHast(T,a,b, sigq, loiProp);
