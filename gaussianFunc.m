@@ -1,1 +1,1 @@
-function val = gaussianFunc(x, mu, sigm)    val = 1/(sigm*sqrt(2*pi)) * exp(-(x-mu)*(x-mu)/(2*sigm*sigm));    endfunction
+function val = gaussianFunc(x, mu, sigm)  %%%%%%%%%%%  % Fonction permettant de retourner la valeur d'une gaussienne d'écart type  % sigm et de moyenne mu en x.  %%%%%%%%%%%    val = 1/(sigm*sqrt(2*pi)) * exp(-(x-mu).*(x-mu)/(2*sigm*sigm));    endfunction
